@@ -1,0 +1,2372 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/lmaccherone/node-localstorage"
+
+    >node-localstorage (v1.3.0)</a>
+</h1>
+<h4>A drop-in substitute for the browser native localStorage API that runs on node.js.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage">module node-localstorage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.init">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.listenerCount">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.prototype.getItem">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.prototype.getItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.prototype.setItem">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.prototype.setItem
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage
+            <span class="apidocSignatureSpan">(_location, quota)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype._deleteLocation
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype._getBytesInUse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._getStat">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype._getStat
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._init">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype._init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.clear">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.clear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.getItem">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.getItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.key">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.key
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.removeItem">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.removeItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.setItem">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.setItem
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR.captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR.prototype.toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.JSONStorage">module node-localstorage.JSONStorage</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>usingDomains</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.JSONStorage">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.EventEmitter">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.init">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.listenerCount">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>defaultMaxListeners</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.JSONStorage.init">module node-localstorage.JSONStorage.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.init.init">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.JSONStorage.listenerCount">module node-localstorage.JSONStorage.listenerCount</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.listenerCount.listenerCount">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.JSONStorage.prototype">module node-localstorage.JSONStorage.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.prototype.constructor">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.prototype.getItem">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>getItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.prototype.setItem">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>setItem
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.JSONStorage.prototype.getItem">module node-localstorage.JSONStorage.prototype.getItem</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.prototype.getItem.getItem">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>getItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.JSONStorage.prototype.setItem">module node-localstorage.JSONStorage.prototype.setItem</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.JSONStorage.prototype.setItem.setItem">
+            function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>setItem
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage">module node-localstorage.LocalStorage</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>usingDomains</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.LocalStorage">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage
+            <span class="apidocSignatureSpan">(_location, quota)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.EventEmitter">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.init">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.listenerCount">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>defaultMaxListeners</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype">module node-localstorage.LocalStorage.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_deleteLocation
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_getBytesInUse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._getStat">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_getStat
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._init">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.clear">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>clear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.constructor">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(_location, quota)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.getItem">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>getItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.key">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>key
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.removeItem">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>removeItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.setItem">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>setItem
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype._deleteLocation">module node-localstorage.LocalStorage.prototype._deleteLocation</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation._deleteLocation">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_deleteLocation
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype._getBytesInUse">module node-localstorage.LocalStorage.prototype._getBytesInUse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse._getBytesInUse">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_getBytesInUse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype._getStat">module node-localstorage.LocalStorage.prototype._getStat</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._getStat._getStat">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_getStat
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype._init">module node-localstorage.LocalStorage.prototype._init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype._init._init">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.clear">module node-localstorage.LocalStorage.prototype.clear</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.clear.clear">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>clear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.getItem">module node-localstorage.LocalStorage.prototype.getItem</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.getItem.getItem">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>getItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.key">module node-localstorage.LocalStorage.prototype.key</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.key.key">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>key
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.removeItem">module node-localstorage.LocalStorage.prototype.removeItem</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.removeItem.removeItem">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>removeItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.setItem">module node-localstorage.LocalStorage.prototype.setItem</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.LocalStorage.prototype.setItem.setItem">
+            function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>setItem
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR">module node-localstorage.QUOTA_EXCEEDED_ERR</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.QUOTA_EXCEEDED_ERR">
+            function <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace">
+            function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.</span>stackTraceLimit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace">module node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace.captureStackTrace">
+            function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.prototype">module node-localstorage.QUOTA_EXCEEDED_ERR.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.constructor">
+            function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString">
+            function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString">module node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString.toString">
+            function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage" id="apidoc.module.node-localstorage">module node-localstorage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage" id="apidoc.element.node-localstorage.JSONStorage">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONStorage() {
+  return JSONStorage.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.init" id="apidoc.element.node-localstorage.JSONStorage.init">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JSONStorage.init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require(&#x27;domain&#x27;);
+    if (domain.active &#x26;&#x26; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.listenerCount" id="apidoc.element.node-localstorage.JSONStorage.listenerCount">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JSONStorage.listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === &#x27;function&#x27;) {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.prototype.getItem" id="apidoc.element.node-localstorage.JSONStorage.prototype.getItem">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.prototype.getItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JSONStorage.prototype.getItem = function (key) {
+  return JSON.parse(JSONStorage.__super__.getItem.call(this, key));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.prototype.setItem" id="apidoc.element.node-localstorage.JSONStorage.prototype.setItem">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage.prototype.setItem
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JSONStorage.prototype.setItem = function (key, value) {
+  var newValue;
+  newValue = JSON.stringify(value);
+  return JSONStorage.__super__.setItem.call(this, key, newValue);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage" id="apidoc.element.node-localstorage.LocalStorage">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage
+        <span class="apidocSignatureSpan">(_location, quota)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalStorage(_location, quota) {
+  this._location = _location;
+  this.quota = quota != null ? quota : 5 * 1024 * 1024;
+  if (!(this instanceof LocalStorage)) {
+    return new LocalStorage(this._location, this.quota);
+  }
+  this._location = path.resolve(this._location);
+  if (instanceMap[this._location] != null) {
+    return instanceMap[this._location];
+  }
+  this.length = 0;
+  this._bytesInUse = 0;
+  this._keys = [];
+  this._metaKeyMap = createMap();
+  this._eventUrl = &#x22;pid:&#x22; + process.pid;
+  this._init();
+  this._QUOTA_EXCEEDED_ERR = QUOTA_EXCEEDED_ERR;
+  instanceMap[this._location] = this;
+  return instanceMap[this._location];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation" id="apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype._deleteLocation
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype._deleteLocation = function () {
+  delete instanceMap[this._location];
+  _rm(this._location);
+  this._metaKeyMap = {};
+  this._keys = [];
+  this.length = 0;
+  return this._bytesInUse = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse" id="apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype._getBytesInUse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype._getBytesInUse = function () {
+  return this._bytesInUse;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._getStat" id="apidoc.element.node-localstorage.LocalStorage.prototype._getStat">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype._getStat
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype._getStat = function (key) {
+  var error, filename;
+  key = _escapeKey(key);
+  filename = path.join(this._location, encodeURIComponent(key));
+  try {
+    return fs.statSync(filename);
+  } catch (error) {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._init" id="apidoc.element.node-localstorage.LocalStorage.prototype._init">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype._init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype._init = function () {
+  var _MetaKey, _decodedKey, _keys, error, i, index, k, len, stat;
+  try {
+    stat = fs.statSync(this._location);
+    if ((stat != null) &#x26;&#x26; !stat.isDirectory()) {
+      throw new Error(&#x22;A file exists at the location &#x27;&#x22; + this._location + &#x22;&#x27; when trying to create/open localStorage&#x22;);
+    }
+    this._bytesInUse = 0;
+    this.length = 0;
+    _keys = fs.readdirSync(this._location);
+    for (index = i = 0, len = _keys.length; i &#x3c; len; index = ++i) {
+      k = _keys[index];
+      _decodedKey = decodeURIComponent(k);
+      this._keys.push(_decodedKey);
+      _MetaKey = new MetaKey(k, index);
+      this._metaKeyMap[_decodedKey] = _MetaKey;
+      stat = this._getStat(k);
+      if ((stat != null ? stat.size : void 0) != null) {
+        _MetaKey.size = stat.size;
+        this._bytesInUse += stat.size;
+      }
+    }
+    this.length = _keys.length;
+  } catch (error) {
+    fs.mkdirSync(this._location);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.clear" id="apidoc.element.node-localstorage.LocalStorage.prototype.clear">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.clear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype.clear = function () {
+  var evnt;
+  _emptyDirectory(this._location);
+  this._metaKeyMap = createMap();
+  this._keys = [];
+  this.length = 0;
+  this._bytesInUse = 0;
+  if (events.EventEmitter.listenerCount(this, &#x27;storage&#x27;)) {
+    evnt = new StorageEvent(null, null, null, this._eventUrl);
+    return this.emit(&#x27;storage&#x27;, evnt);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.getItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.getItem">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.getItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype.getItem = function (key) {
+  var filename, metaKey;
+  key = _escapeKey(key);
+  metaKey = this._metaKeyMap[key];
+  if (!!metaKey) {
+    filename = path.join(this._location, metaKey.key);
+    return fs.readFileSync(filename, &#x27;utf8&#x27;);
+  } else {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.key" id="apidoc.element.node-localstorage.LocalStorage.prototype.key">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.key
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype.key = function (n) {
+  return this._keys[n];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.removeItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.removeItem">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.removeItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype.removeItem = function (key) {
+  var evnt, filename, hasListeners, k, meta, metaKey, oldValue, ref, v;
+  key = _escapeKey(key);
+  metaKey = this._metaKeyMap[key];
+  if (!!metaKey) {
+    hasListeners = events.EventEmitter.listenerCount(this, &#x27;storage&#x27;);
+    oldValue = null;
+    if (hasListeners) {
+      oldValue = this.getItem(key);
+    }
+    delete this._metaKeyMap[key];
+    this.length -= 1;
+    this._bytesInUse -= metaKey.size;
+    filename = path.join(this._location, metaKey.key);
+    this._keys.splice(metaKey.index, 1);
+    ref = this._metaKeyMap;
+    for (k in ref) {
+      v = ref[k];
+      meta = this._metaKeyMap[k];
+      if (meta.index &#x3e; metaKey.index) {
+        meta.index -= 1;
+      }
+    }
+    _rm(filename);
+    if (hasListeners) {
+      evnt = new StorageEvent(key, oldValue, null, this._eventUrl);
+      return this.emit(&#x27;storage&#x27;, evnt);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.setItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.setItem">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage.prototype.setItem
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorage.prototype.setItem = function (key, value) {
+  var encodedKey, evnt, existsBeforeSet, filename, hasListeners, metaKey, oldLength, oldValue, valueString, valueStringLength;
+  hasListeners = events.EventEmitter.listenerCount(this, &#x27;storage&#x27;);
+  oldValue = null;
+  if (hasListeners) {
+    oldValue = this.getItem(key);
+  }
+  key = _escapeKey(key);
+  encodedKey = encodeURIComponent(key);
+  filename = path.join(this._location, encodedKey);
+  valueString = value.toString();
+  valueStringLength = valueString.length;
+  metaKey = this._metaKeyMap[key];
+  existsBeforeSet = !!metaKey;
+  if (existsBeforeSet) {
+    oldLength = metaKey.size;
+  } else {
+    oldLength = 0;
+  }
+  if (this._bytesInUse - oldLength + valueStringLength &#x3e; this.quota) {
+    throw new QUOTA_EXCEEDED_ERR();
+  }
+  writeSync(filename, valueString, &#x27;utf8&#x27;);
+  if (!existsBeforeSet) {
+    metaKey = new MetaKey(encodedKey, (this._keys.push(key)) - 1);
+    metaKey.size = valueStringLength;
+    this._metaKeyMap[key] = metaKey;
+    this.length += 1;
+    this._bytesInUse += valueStringLength;
+  }
+  if (hasListeners) {
+    evnt = new StorageEvent(key, oldValue, value, this._eventUrl);
+    return this.emit(&#x27;storage&#x27;, evnt);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function QUOTA_EXCEEDED_ERR(message) {
+  this.message = message != null ? message : &#x27;Unknown error.&#x27;;
+  if (Error.captureStackTrace != null) {
+    Error.captureStackTrace(this, this.constructor);
+  }
+  this.name = this.constructor.name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR.captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR.prototype.toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">QUOTA_EXCEEDED_ERR.prototype.toString = function () {
+  return this.name + &#x22;: &#x22; + this.message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.JSONStorage" id="apidoc.module.node-localstorage.JSONStorage">module node-localstorage.JSONStorage</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.JSONStorage" id="apidoc.element.node-localstorage.JSONStorage.JSONStorage">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>JSONStorage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONStorage() {
+  return JSONStorage.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.EventEmitter" id="apidoc.element.node-localstorage.JSONStorage.EventEmitter">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.init" id="apidoc.element.node-localstorage.JSONStorage.init">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require(&#x27;domain&#x27;);
+    if (domain.active &#x26;&#x26; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.listenerCount" id="apidoc.element.node-localstorage.JSONStorage.listenerCount">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === &#x27;function&#x27;) {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.JSONStorage.init" id="apidoc.module.node-localstorage.JSONStorage.init">module node-localstorage.JSONStorage.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.init.init" id="apidoc.element.node-localstorage.JSONStorage.init.init">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require(&#x27;domain&#x27;);
+    if (domain.active &#x26;&#x26; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.JSONStorage.listenerCount" id="apidoc.module.node-localstorage.JSONStorage.listenerCount">module node-localstorage.JSONStorage.listenerCount</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.listenerCount.listenerCount" id="apidoc.element.node-localstorage.JSONStorage.listenerCount.listenerCount">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === &#x27;function&#x27;) {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.JSONStorage.prototype" id="apidoc.module.node-localstorage.JSONStorage.prototype">module node-localstorage.JSONStorage.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.prototype.constructor" id="apidoc.element.node-localstorage.JSONStorage.prototype.constructor">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONStorage() {
+  return JSONStorage.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.prototype.getItem" id="apidoc.element.node-localstorage.JSONStorage.prototype.getItem">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>getItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getItem = function (key) {
+  return JSON.parse(JSONStorage.__super__.getItem.call(this, key));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### CoffeeScript ###
+
+    unless localStorage?
+      {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+      localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+    localStorage.setItem(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+    console.log(localStorage.<span class="apidocCodeKeywordSpan">getItem</span>(&#x27;myFirstKey&#x27;))
+    # myFirstValue
+
+    localStorage._deleteLocation()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+
+```JavaScript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.prototype.setItem" id="apidoc.element.node-localstorage.JSONStorage.prototype.setItem">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>setItem
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setItem = function (key, value) {
+  var newValue;
+  newValue = JSON.stringify(value);
+  return JSONStorage.__super__.setItem.call(this, key, newValue);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### CoffeeScript ###
+
+    unless localStorage?
+      {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+      localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+    localStorage.<span class="apidocCodeKeywordSpan">setItem</span>(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+    console.log(localStorage.getItem(&#x27;myFirstKey&#x27;))
+    # myFirstValue
+
+    localStorage._deleteLocation()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.JSONStorage.prototype.getItem" id="apidoc.module.node-localstorage.JSONStorage.prototype.getItem">module node-localstorage.JSONStorage.prototype.getItem</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.prototype.getItem.getItem" id="apidoc.element.node-localstorage.JSONStorage.prototype.getItem.getItem">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>getItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getItem = function (key) {
+  return JSON.parse(JSONStorage.__super__.getItem.call(this, key));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### CoffeeScript ###
+
+    unless localStorage?
+      {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+      localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+    localStorage.setItem(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+    console.log(localStorage.<span class="apidocCodeKeywordSpan">getItem</span>(&#x27;myFirstKey&#x27;))
+    # myFirstValue
+
+    localStorage._deleteLocation()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+
+```JavaScript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.JSONStorage.prototype.setItem" id="apidoc.module.node-localstorage.JSONStorage.prototype.setItem">module node-localstorage.JSONStorage.prototype.setItem</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.JSONStorage.prototype.setItem.setItem" id="apidoc.element.node-localstorage.JSONStorage.prototype.setItem.setItem">
+        function <span class="apidocSignatureSpan">node-localstorage.JSONStorage.prototype.</span>setItem
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setItem = function (key, value) {
+  var newValue;
+  newValue = JSON.stringify(value);
+  return JSONStorage.__super__.setItem.call(this, key, newValue);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### CoffeeScript ###
+
+    unless localStorage?
+      {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+      localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+    localStorage.<span class="apidocCodeKeywordSpan">setItem</span>(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+    console.log(localStorage.getItem(&#x27;myFirstKey&#x27;))
+    # myFirstValue
+
+    localStorage._deleteLocation()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage" id="apidoc.module.node-localstorage.LocalStorage">module node-localstorage.LocalStorage</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.LocalStorage" id="apidoc.element.node-localstorage.LocalStorage.LocalStorage">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>LocalStorage
+        <span class="apidocSignatureSpan">(_location, quota)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalStorage(_location, quota) {
+  this._location = _location;
+  this.quota = quota != null ? quota : 5 * 1024 * 1024;
+  if (!(this instanceof LocalStorage)) {
+    return new LocalStorage(this._location, this.quota);
+  }
+  this._location = path.resolve(this._location);
+  if (instanceMap[this._location] != null) {
+    return instanceMap[this._location];
+  }
+  this.length = 0;
+  this._bytesInUse = 0;
+  this._keys = [];
+  this._metaKeyMap = createMap();
+  this._eventUrl = &#x22;pid:&#x22; + process.pid;
+  this._init();
+  this._QUOTA_EXCEEDED_ERR = QUOTA_EXCEEDED_ERR;
+  instanceMap[this._location] = this;
+  return instanceMap[this._location];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.EventEmitter" id="apidoc.element.node-localstorage.LocalStorage.EventEmitter">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.init" id="apidoc.element.node-localstorage.LocalStorage.init">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require(&#x27;domain&#x27;);
+    if (domain.active &#x26;&#x26; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.listenerCount" id="apidoc.element.node-localstorage.LocalStorage.listenerCount">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === &#x27;function&#x27;) {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype" id="apidoc.module.node-localstorage.LocalStorage.prototype">module node-localstorage.LocalStorage.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation" id="apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_deleteLocation
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_deleteLocation = function () {
+  delete instanceMap[this._location];
+  _rm(this._location);
+  this._metaKeyMap = {};
+  this._keys = [];
+  this.length = 0;
+  return this._bytesInUse = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+    localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+  localStorage.setItem(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+  console.log(localStorage.getItem(&#x27;myFirstKey&#x27;))
+  # myFirstValue
+
+  localStorage.<span class="apidocCodeKeywordSpan">_deleteLocation</span>()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+
+```JavaScript
+if (typeof localStorage === &#x22;undefined&#x22; || localStorage === null) {
+var LocalStorage = require(&#x27;node-localstorage&#x27;).LocalStorage;
+localStorage = new LocalStorage(&#x27;./scratch&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse" id="apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_getBytesInUse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getBytesInUse = function () {
+  return this._bytesInUse;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._getStat" id="apidoc.element.node-localstorage.LocalStorage.prototype._getStat">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_getStat
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getStat = function (key) {
+  var error, filename;
+  key = _escapeKey(key);
+  filename = path.join(this._location, encodeURIComponent(key));
+  try {
+    return fs.statSync(filename);
+  } catch (error) {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._init" id="apidoc.element.node-localstorage.LocalStorage.prototype._init">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_init = function () {
+  var _MetaKey, _decodedKey, _keys, error, i, index, k, len, stat;
+  try {
+    stat = fs.statSync(this._location);
+    if ((stat != null) &#x26;&#x26; !stat.isDirectory()) {
+      throw new Error(&#x22;A file exists at the location &#x27;&#x22; + this._location + &#x22;&#x27; when trying to create/open localStorage&#x22;);
+    }
+    this._bytesInUse = 0;
+    this.length = 0;
+    _keys = fs.readdirSync(this._location);
+    for (index = i = 0, len = _keys.length; i &#x3c; len; index = ++i) {
+      k = _keys[index];
+      _decodedKey = decodeURIComponent(k);
+      this._keys.push(_decodedKey);
+      _MetaKey = new MetaKey(k, index);
+      this._metaKeyMap[_decodedKey] = _MetaKey;
+      stat = this._getStat(k);
+      if ((stat != null ? stat.size : void 0) != null) {
+        _MetaKey.size = stat.size;
+        this._bytesInUse += stat.size;
+      }
+    }
+    this.length = _keys.length;
+  } catch (error) {
+    fs.mkdirSync(this._location);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.clear" id="apidoc.element.node-localstorage.LocalStorage.prototype.clear">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>clear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function () {
+  var evnt;
+  _emptyDirectory(this._location);
+  this._metaKeyMap = createMap();
+  this._keys = [];
+  this.length = 0;
+  this._bytesInUse = 0;
+  if (events.EventEmitter.listenerCount(this, &#x27;storage&#x27;)) {
+    evnt = new StorageEvent(null, null, null, this._eventUrl);
+    return this.emit(&#x27;storage&#x27;, evnt);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.constructor" id="apidoc.element.node-localstorage.LocalStorage.prototype.constructor">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(_location, quota)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalStorage(_location, quota) {
+  this._location = _location;
+  this.quota = quota != null ? quota : 5 * 1024 * 1024;
+  if (!(this instanceof LocalStorage)) {
+    return new LocalStorage(this._location, this.quota);
+  }
+  this._location = path.resolve(this._location);
+  if (instanceMap[this._location] != null) {
+    return instanceMap[this._location];
+  }
+  this.length = 0;
+  this._bytesInUse = 0;
+  this._keys = [];
+  this._metaKeyMap = createMap();
+  this._eventUrl = &#x22;pid:&#x22; + process.pid;
+  this._init();
+  this._QUOTA_EXCEEDED_ERR = QUOTA_EXCEEDED_ERR;
+  instanceMap[this._location] = this;
+  return instanceMap[this._location];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.getItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.getItem">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>getItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getItem = function (key) {
+  var filename, metaKey;
+  key = _escapeKey(key);
+  metaKey = this._metaKeyMap[key];
+  if (!!metaKey) {
+    filename = path.join(this._location, metaKey.key);
+    return fs.readFileSync(filename, &#x27;utf8&#x27;);
+  } else {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### CoffeeScript ###
+
+    unless localStorage?
+      {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+      localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+    localStorage.setItem(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+    console.log(localStorage.<span class="apidocCodeKeywordSpan">getItem</span>(&#x27;myFirstKey&#x27;))
+    # myFirstValue
+
+    localStorage._deleteLocation()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+
+```JavaScript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.key" id="apidoc.element.node-localstorage.LocalStorage.prototype.key">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>key
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">key = function (n) {
+  return this._keys[n];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.removeItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.removeItem">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>removeItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeItem = function (key) {
+  var evnt, filename, hasListeners, k, meta, metaKey, oldValue, ref, v;
+  key = _escapeKey(key);
+  metaKey = this._metaKeyMap[key];
+  if (!!metaKey) {
+    hasListeners = events.EventEmitter.listenerCount(this, &#x27;storage&#x27;);
+    oldValue = null;
+    if (hasListeners) {
+      oldValue = this.getItem(key);
+    }
+    delete this._metaKeyMap[key];
+    this.length -= 1;
+    this._bytesInUse -= metaKey.size;
+    filename = path.join(this._location, metaKey.key);
+    this._keys.splice(metaKey.index, 1);
+    ref = this._metaKeyMap;
+    for (k in ref) {
+      v = ref[k];
+      meta = this._metaKeyMap[k];
+      if (meta.index &#x3e; metaKey.index) {
+        meta.index -= 1;
+      }
+    }
+    _rm(filename);
+    if (hasListeners) {
+      evnt = new StorageEvent(key, oldValue, null, this._eventUrl);
+      return this.emit(&#x27;storage&#x27;, evnt);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.setItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.setItem">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>setItem
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setItem = function (key, value) {
+  var encodedKey, evnt, existsBeforeSet, filename, hasListeners, metaKey, oldLength, oldValue, valueString, valueStringLength;
+  hasListeners = events.EventEmitter.listenerCount(this, &#x27;storage&#x27;);
+  oldValue = null;
+  if (hasListeners) {
+    oldValue = this.getItem(key);
+  }
+  key = _escapeKey(key);
+  encodedKey = encodeURIComponent(key);
+  filename = path.join(this._location, encodedKey);
+  valueString = value.toString();
+  valueStringLength = valueString.length;
+  metaKey = this._metaKeyMap[key];
+  existsBeforeSet = !!metaKey;
+  if (existsBeforeSet) {
+    oldLength = metaKey.size;
+  } else {
+    oldLength = 0;
+  }
+  if (this._bytesInUse - oldLength + valueStringLength &#x3e; this.quota) {
+    throw new QUOTA_EXCEEDED_ERR();
+  }
+  writeSync(filename, valueString, &#x27;utf8&#x27;);
+  if (!existsBeforeSet) {
+    metaKey = new MetaKey(encodedKey, (this._keys.push(key)) - 1);
+    metaKey.size = valueStringLength;
+    this._metaKeyMap[key] = metaKey;
+    this.length += 1;
+    this._bytesInUse += valueStringLength;
+  }
+  if (hasListeners) {
+    evnt = new StorageEvent(key, oldValue, value, this._eventUrl);
+    return this.emit(&#x27;storage&#x27;, evnt);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### CoffeeScript ###
+
+    unless localStorage?
+      {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+      localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+    localStorage.<span class="apidocCodeKeywordSpan">setItem</span>(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+    console.log(localStorage.getItem(&#x27;myFirstKey&#x27;))
+    # myFirstValue
+
+    localStorage._deleteLocation()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype._deleteLocation" id="apidoc.module.node-localstorage.LocalStorage.prototype._deleteLocation">module node-localstorage.LocalStorage.prototype._deleteLocation</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation._deleteLocation" id="apidoc.element.node-localstorage.LocalStorage.prototype._deleteLocation._deleteLocation">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_deleteLocation
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_deleteLocation = function () {
+  delete instanceMap[this._location];
+  _rm(this._location);
+  this._metaKeyMap = {};
+  this._keys = [];
+  this.length = 0;
+  return this._bytesInUse = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+    localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+  localStorage.setItem(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+  console.log(localStorage.getItem(&#x27;myFirstKey&#x27;))
+  # myFirstValue
+
+  localStorage.<span class="apidocCodeKeywordSpan">_deleteLocation</span>()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+
+```JavaScript
+if (typeof localStorage === &#x22;undefined&#x22; || localStorage === null) {
+var LocalStorage = require(&#x27;node-localstorage&#x27;).LocalStorage;
+localStorage = new LocalStorage(&#x27;./scratch&#x27;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype._getBytesInUse" id="apidoc.module.node-localstorage.LocalStorage.prototype._getBytesInUse">module node-localstorage.LocalStorage.prototype._getBytesInUse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse._getBytesInUse" id="apidoc.element.node-localstorage.LocalStorage.prototype._getBytesInUse._getBytesInUse">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_getBytesInUse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getBytesInUse = function () {
+  return this._bytesInUse;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype._getStat" id="apidoc.module.node-localstorage.LocalStorage.prototype._getStat">module node-localstorage.LocalStorage.prototype._getStat</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._getStat._getStat" id="apidoc.element.node-localstorage.LocalStorage.prototype._getStat._getStat">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_getStat
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getStat = function (key) {
+  var error, filename;
+  key = _escapeKey(key);
+  filename = path.join(this._location, encodeURIComponent(key));
+  try {
+    return fs.statSync(filename);
+  } catch (error) {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype._init" id="apidoc.module.node-localstorage.LocalStorage.prototype._init">module node-localstorage.LocalStorage.prototype._init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype._init._init" id="apidoc.element.node-localstorage.LocalStorage.prototype._init._init">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>_init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_init = function () {
+  var _MetaKey, _decodedKey, _keys, error, i, index, k, len, stat;
+  try {
+    stat = fs.statSync(this._location);
+    if ((stat != null) &#x26;&#x26; !stat.isDirectory()) {
+      throw new Error(&#x22;A file exists at the location &#x27;&#x22; + this._location + &#x22;&#x27; when trying to create/open localStorage&#x22;);
+    }
+    this._bytesInUse = 0;
+    this.length = 0;
+    _keys = fs.readdirSync(this._location);
+    for (index = i = 0, len = _keys.length; i &#x3c; len; index = ++i) {
+      k = _keys[index];
+      _decodedKey = decodeURIComponent(k);
+      this._keys.push(_decodedKey);
+      _MetaKey = new MetaKey(k, index);
+      this._metaKeyMap[_decodedKey] = _MetaKey;
+      stat = this._getStat(k);
+      if ((stat != null ? stat.size : void 0) != null) {
+        _MetaKey.size = stat.size;
+        this._bytesInUse += stat.size;
+      }
+    }
+    this.length = _keys.length;
+  } catch (error) {
+    fs.mkdirSync(this._location);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.clear" id="apidoc.module.node-localstorage.LocalStorage.prototype.clear">module node-localstorage.LocalStorage.prototype.clear</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.clear.clear" id="apidoc.element.node-localstorage.LocalStorage.prototype.clear.clear">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>clear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function () {
+  var evnt;
+  _emptyDirectory(this._location);
+  this._metaKeyMap = createMap();
+  this._keys = [];
+  this.length = 0;
+  this._bytesInUse = 0;
+  if (events.EventEmitter.listenerCount(this, &#x27;storage&#x27;)) {
+    evnt = new StorageEvent(null, null, null, this._eventUrl);
+    return this.emit(&#x27;storage&#x27;, evnt);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.getItem" id="apidoc.module.node-localstorage.LocalStorage.prototype.getItem">module node-localstorage.LocalStorage.prototype.getItem</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.getItem.getItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.getItem.getItem">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>getItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getItem = function (key) {
+  var filename, metaKey;
+  key = _escapeKey(key);
+  metaKey = this._metaKeyMap[key];
+  if (!!metaKey) {
+    filename = path.join(this._location, metaKey.key);
+    return fs.readFileSync(filename, &#x27;utf8&#x27;);
+  } else {
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### CoffeeScript ###
+
+    unless localStorage?
+      {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+      localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+    localStorage.setItem(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+    console.log(localStorage.<span class="apidocCodeKeywordSpan">getItem</span>(&#x27;myFirstKey&#x27;))
+    # myFirstValue
+
+    localStorage._deleteLocation()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+
+```JavaScript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.key" id="apidoc.module.node-localstorage.LocalStorage.prototype.key">module node-localstorage.LocalStorage.prototype.key</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.key.key" id="apidoc.element.node-localstorage.LocalStorage.prototype.key.key">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>key
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">key = function (n) {
+  return this._keys[n];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.removeItem" id="apidoc.module.node-localstorage.LocalStorage.prototype.removeItem">module node-localstorage.LocalStorage.prototype.removeItem</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.removeItem.removeItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.removeItem.removeItem">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>removeItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeItem = function (key) {
+  var evnt, filename, hasListeners, k, meta, metaKey, oldValue, ref, v;
+  key = _escapeKey(key);
+  metaKey = this._metaKeyMap[key];
+  if (!!metaKey) {
+    hasListeners = events.EventEmitter.listenerCount(this, &#x27;storage&#x27;);
+    oldValue = null;
+    if (hasListeners) {
+      oldValue = this.getItem(key);
+    }
+    delete this._metaKeyMap[key];
+    this.length -= 1;
+    this._bytesInUse -= metaKey.size;
+    filename = path.join(this._location, metaKey.key);
+    this._keys.splice(metaKey.index, 1);
+    ref = this._metaKeyMap;
+    for (k in ref) {
+      v = ref[k];
+      meta = this._metaKeyMap[k];
+      if (meta.index &#x3e; metaKey.index) {
+        meta.index -= 1;
+      }
+    }
+    _rm(filename);
+    if (hasListeners) {
+      evnt = new StorageEvent(key, oldValue, null, this._eventUrl);
+      return this.emit(&#x27;storage&#x27;, evnt);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.LocalStorage.prototype.setItem" id="apidoc.module.node-localstorage.LocalStorage.prototype.setItem">module node-localstorage.LocalStorage.prototype.setItem</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.LocalStorage.prototype.setItem.setItem" id="apidoc.element.node-localstorage.LocalStorage.prototype.setItem.setItem">
+        function <span class="apidocSignatureSpan">node-localstorage.LocalStorage.prototype.</span>setItem
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setItem = function (key, value) {
+  var encodedKey, evnt, existsBeforeSet, filename, hasListeners, metaKey, oldLength, oldValue, valueString, valueStringLength;
+  hasListeners = events.EventEmitter.listenerCount(this, &#x27;storage&#x27;);
+  oldValue = null;
+  if (hasListeners) {
+    oldValue = this.getItem(key);
+  }
+  key = _escapeKey(key);
+  encodedKey = encodeURIComponent(key);
+  filename = path.join(this._location, encodedKey);
+  valueString = value.toString();
+  valueStringLength = valueString.length;
+  metaKey = this._metaKeyMap[key];
+  existsBeforeSet = !!metaKey;
+  if (existsBeforeSet) {
+    oldLength = metaKey.size;
+  } else {
+    oldLength = 0;
+  }
+  if (this._bytesInUse - oldLength + valueStringLength &#x3e; this.quota) {
+    throw new QUOTA_EXCEEDED_ERR();
+  }
+  writeSync(filename, valueString, &#x27;utf8&#x27;);
+  if (!existsBeforeSet) {
+    metaKey = new MetaKey(encodedKey, (this._keys.push(key)) - 1);
+    metaKey.size = valueStringLength;
+    this._metaKeyMap[key] = metaKey;
+    this.length += 1;
+    this._bytesInUse += valueStringLength;
+  }
+  if (hasListeners) {
+    evnt = new StorageEvent(key, oldValue, value, this._eventUrl);
+    return this.emit(&#x27;storage&#x27;, evnt);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### CoffeeScript ###
+
+    unless localStorage?
+      {LocalStorage} = require(&#x27;../&#x27;)  # require(&#x27;node-localstorage&#x27;) for you
+      localStorage = new LocalStorage(&#x27;./scratch&#x27;)
+
+    localStorage.<span class="apidocCodeKeywordSpan">setItem</span>(&#x27;myFirstKey&#x27;, &#x27;myFirstValue&#x27;)
+    console.log(localStorage.getItem(&#x27;myFirstKey&#x27;))
+    # myFirstValue
+
+    localStorage._deleteLocation()  # cleans up ./scratch created during doctest
+
+### JavaScript ###
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR" id="apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR">module node-localstorage.QUOTA_EXCEEDED_ERR</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.QUOTA_EXCEEDED_ERR" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.QUOTA_EXCEEDED_ERR">
+        function <span class="apidocSignatureSpan">node-localstorage.</span>QUOTA_EXCEEDED_ERR
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function QUOTA_EXCEEDED_ERR(message) {
+  this.message = message != null ? message : &#x27;Unknown error.&#x27;;
+  if (Error.captureStackTrace != null) {
+    Error.captureStackTrace(this, this.constructor);
+  }
+  this.name = this.constructor.name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace">
+        function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace" id="apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace">module node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace.captureStackTrace" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.captureStackTrace.captureStackTrace">
+        function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.prototype" id="apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.prototype">module node-localstorage.QUOTA_EXCEEDED_ERR.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.constructor" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.constructor">
+        function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function QUOTA_EXCEEDED_ERR(message) {
+  this.message = message != null ? message : &#x27;Unknown error.&#x27;;
+  if (Error.captureStackTrace != null) {
+    Error.captureStackTrace(this, this.constructor);
+  }
+  this.name = this.constructor.name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString">
+        function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return this.name + &#x22;: &#x22; + this.message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString" id="apidoc.module.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString">module node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString.toString" id="apidoc.element.node-localstorage.QUOTA_EXCEEDED_ERR.prototype.toString.toString">
+        function <span class="apidocSignatureSpan">node-localstorage.QUOTA_EXCEEDED_ERR.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
