@@ -1,4 +1,7 @@
-# api documentation for  [node-localstorage (v1.3.0)](https://github.com/lmaccherone/node-localstorage)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-localstorage.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-localstorage) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-localstorage.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-localstorage)
+# npmdoc-node-localstorage
+
+#### api documentation for  [node-localstorage (v1.3.0)](https://github.com/lmaccherone/node-localstorage)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-localstorage.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-localstorage) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-localstorage.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-localstorage)
+
 #### A drop-in substitute for the browser native localStorage API that runs on node.js.
 
 [![NPM](https://nodei.co/npm/node-localstorage.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-localstorage)
